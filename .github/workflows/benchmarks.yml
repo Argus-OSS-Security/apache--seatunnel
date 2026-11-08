@@ -17,44 +17,45 @@
 
 name: Benchmarks
 
-on:
-  schedule:
-    # Avoid the high-load top of the hour for scheduled workflows.
-    - cron: '17 0 * * *'
-  workflow_dispatch:
-    inputs:
-      seatunnel_ref:
-        description: 'SeaTunnel branch, tag, or commit SHA to benchmark.'
-        required: false
-        type: string
-        default: 'dev'
-      benchmarks:
-        description: 'Select a benchmark suite or class.'
-        required: true
-        type: choice
-        options:
-          - 'benchmarks_core'
-          - 'SeaTunnelRowBenchmark'
-          - 'IntermediateQueueBenchmark'
-          - 'DebeziumJsonFormatBenchmark'
-          - 'ProtoStuffSerializerBenchmark'
-          - 'SeaTunnelPipelineBenchmark'
-          - 'CheckpointingTimeBenchmark'
-          - 'CheckpointSchedulingBenchmark'
-          - 'CheckpointStorageBenchmark'
-          - 'IMapJobStorageBenchmark'
-          - 'IMapDagStorageBenchmark'
-          - 'IMapWalStorageBenchmark'
-        default: 'benchmarks_core'
-      custom_benchmarks:
-        description: 'Exact JMH selector; overrides the choice. .* may exceed 240 minutes.'
-        required: false
-        type: string
-      pr_number:
-        description: 'Optional trusted PR to compare. The workflow executes its code.'
-        required: false
-        type: string
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   schedule:
+#     # Avoid the high-load top of the hour for scheduled workflows.
+#     - cron: '17 0 * * *'
+#   workflow_dispatch:
+#     inputs:
+#       seatunnel_ref:
+#         description: 'SeaTunnel branch, tag, or commit SHA to benchmark.'
+#         required: false
+#         type: string
+#         default: 'dev'
+#       benchmarks:
+#         description: 'Select a benchmark suite or class.'
+#         required: true
+#         type: choice
+#         options:
+#           - 'benchmarks_core'
+#           - 'SeaTunnelRowBenchmark'
+#           - 'IntermediateQueueBenchmark'
+#           - 'DebeziumJsonFormatBenchmark'
+#           - 'ProtoStuffSerializerBenchmark'
+#           - 'SeaTunnelPipelineBenchmark'
+#           - 'CheckpointingTimeBenchmark'
+#           - 'CheckpointSchedulingBenchmark'
+#           - 'CheckpointStorageBenchmark'
+#           - 'IMapJobStorageBenchmark'
+#           - 'IMapDagStorageBenchmark'
+#           - 'IMapWalStorageBenchmark'
+#         default: 'benchmarks_core'
+#       custom_benchmarks:
+#         description: 'Exact JMH selector; overrides the choice. .* may exceed 240 minutes.'
+#         required: false
+#         type: string
+#       pr_number:
+#         description: 'Optional trusted PR to compare. The workflow executes its code.'
+#         required: false
+#         type: string
+# 
 permissions:
   contents: read
 

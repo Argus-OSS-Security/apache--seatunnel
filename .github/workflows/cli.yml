@@ -17,18 +17,19 @@
 
 name: SeaTunnel CLI
 
-on:
-  push:
-    branches:
-      - dev
-    paths:
-      - 'seatunnel-cli/**'
-      - '.github/workflows/cli.yml'
-  pull_request:
-    paths:
-      - 'seatunnel-cli/**'
-      - '.github/workflows/cli.yml'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - dev
+#     paths:
+#       - 'seatunnel-cli/**'
+#       - '.github/workflows/cli.yml'
+#   pull_request:
+#     paths:
+#       - 'seatunnel-cli/**'
+#       - '.github/workflows/cli.yml'
+# 
 permissions:
   contents: read
 

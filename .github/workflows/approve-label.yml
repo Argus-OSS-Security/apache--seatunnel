@@ -17,10 +17,11 @@
 #
 
 name: "Label when approved workflow run"
-on:
-  workflow_run:
-    workflows: [Label-when-reviewed]
-    types: [requested]
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_run:
+#     workflows: [Label-when-reviewed]
+#     types: [requested]
 permissions:
   # All other permissions are set to none
   checks: write

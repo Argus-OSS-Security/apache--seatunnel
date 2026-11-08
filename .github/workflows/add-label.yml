@@ -19,11 +19,12 @@
 # pull request. The pull request is resolved from the workflow_run payload and
 # labelled through the API; no pull request code is checked out or run.
 name: Pull Request Labeler
-on:
-  workflow_run:
-    workflows: ["PR signal"]
-    types: [completed]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_run:
+#     workflows: ["PR signal"]
+#     types: [completed]
+# 
 permissions: {}
 
 # `action_required` is a signal run of a first-time contributor that waits for workflow

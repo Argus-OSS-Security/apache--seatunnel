@@ -16,13 +16,14 @@
 
 name: publish-e2e-spark-images
 
-on:
-  pull_request:
-    paths:
-      - '.github/workflows/publish-e2e-spark-images.yaml'
-      - 'seatunnel-e2e/seatunnel-e2e-common/src/test/docker/spark/**'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     paths:
+#       - '.github/workflows/publish-e2e-spark-images.yaml'
+#       - 'seatunnel-e2e/seatunnel-e2e-common/src/test/docker/spark/**'
+#   workflow_dispatch:
+# 
 concurrency:
   group: publish-e2e-spark-images
   cancel-in-progress: false

@@ -17,18 +17,19 @@
 
 name: SeaTunnel Python SDK
 
-on:
-  push:
-    branches:
-      - dev
-    paths:
-      - 'tools/seatunnel-python-sdk/**'
-      - '.github/workflows/python-sdk.yml'
-  pull_request:
-    paths:
-      - 'tools/seatunnel-python-sdk/**'
-      - '.github/workflows/python-sdk.yml'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - dev
+#     paths:
+#       - 'tools/seatunnel-python-sdk/**'
+#       - '.github/workflows/python-sdk.yml'
+#   pull_request:
+#     paths:
+#       - 'tools/seatunnel-python-sdk/**'
+#       - '.github/workflows/python-sdk.yml'
+# 
 permissions:
   contents: read
 

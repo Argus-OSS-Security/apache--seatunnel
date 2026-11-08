@@ -22,10 +22,11 @@
 # pull_request_target"). Consumers read the PR through the API from the
 # `workflow_run` payload and never check out or run pull request code.
 name: PR signal
-on:
-  pull_request:
-    types: [opened, reopened, synchronize]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     types: [opened, reopened, synchronize]
+# 
 permissions: {}
 
 jobs:

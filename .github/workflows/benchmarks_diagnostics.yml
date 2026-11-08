@@ -17,52 +17,53 @@
 
 name: Benchmarks Diagnostics
 
-on:
-  workflow_dispatch:
-    inputs:
-      seatunnel_ref:
-        description: 'SeaTunnel branch, tag, or commit SHA to diagnose.'
-        required: false
-        type: string
-        default: 'dev'
-      pr_number:
-        description: 'Optional trusted PR to diagnose. The workflow executes its code.'
-        required: false
-        type: string
-      benchmark:
-        description: 'One exact JMH benchmark method; multi-match selectors are rejected.'
-        required: true
-        type: string
-        default: 'IntermediateQueueBenchmark.disruptorRecordHandoff$'
-      java_version:
-        description: 'JDK used by the diagnostic run.'
-        required: true
-        type: choice
-        options:
-          - '8'
-          - '11'
-        default: '8'
-      profile:
-        description: 'Profiler mode. all runs CPU, wall-clock, lock, and GC separately.'
-        required: true
-        type: choice
-        options:
-          - 'cpu'
-          - 'wall'
-          - 'lock'
-          - 'gc'
-          - 'all'
-        default: 'cpu'
-      capture_jfr:
-        description: 'Also capture a JFR recording for offline JVM analysis.'
-        required: true
-        type: boolean
-        default: false
-      jmh_args:
-        description: 'Optional JMH args, for example: -wi 1 -i 1 -w 1s -r 1s. Forks are fixed at 1.'
-        required: false
-        type: string
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       seatunnel_ref:
+#         description: 'SeaTunnel branch, tag, or commit SHA to diagnose.'
+#         required: false
+#         type: string
+#         default: 'dev'
+#       pr_number:
+#         description: 'Optional trusted PR to diagnose. The workflow executes its code.'
+#         required: false
+#         type: string
+#       benchmark:
+#         description: 'One exact JMH benchmark method; multi-match selectors are rejected.'
+#         required: true
+#         type: string
+#         default: 'IntermediateQueueBenchmark.disruptorRecordHandoff$'
+#       java_version:
+#         description: 'JDK used by the diagnostic run.'
+#         required: true
+#         type: choice
+#         options:
+#           - '8'
+#           - '11'
+#         default: '8'
+#       profile:
+#         description: 'Profiler mode. all runs CPU, wall-clock, lock, and GC separately.'
+#         required: true
+#         type: choice
+#         options:
+#           - 'cpu'
+#           - 'wall'
+#           - 'lock'
+#           - 'gc'
+#           - 'all'
+#         default: 'cpu'
+#       capture_jfr:
+#         description: 'Also capture a JFR recording for offline JVM analysis.'
+#         required: true
+#         type: boolean
+#         default: false
+#       jmh_args:
+#         description: 'Optional JMH args, for example: -wi 1 -i 1 -w 1s -r 1s. Forks are fixed at 1.'
+#         required: false
+#         type: string
+# 
 permissions:
   contents: read
 

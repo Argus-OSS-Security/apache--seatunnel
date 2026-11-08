@@ -16,14 +16,15 @@
 
 name: publish-helm-chart
 
-on:
-  push:
-    tags:
-      - '*'
-    paths-ignore:
-      - 'docs/**'
-      - '**/*.md'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     tags:
+#       - '*'
+#     paths-ignore:
+#       - 'docs/**'
+#       - '**/*.md'
+# 
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USER }}
   DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}

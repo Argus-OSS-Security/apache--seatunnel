@@ -17,7 +17,8 @@
 #
 
 name: Label-when-reviewed
-on: pull_request_review
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on: pull_request_review
 jobs:
 
   label-when-reviewed:

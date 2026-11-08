@@ -17,20 +17,21 @@
 
 name: Upgrade Compatibility
 
-on:
-  workflow_dispatch:
-    inputs:
-      old_version:
-        description: "SeaTunnel release used to create the savepoint"
-        required: false
-        default: "3.0.0"
-      scenario:
-        description: "Restore scenario under tools/upgrade_compatibility/scenarios"
-        required: false
-        default: "all"
-  schedule:
-    - cron: "0 18 * * *"
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       old_version:
+#         description: "SeaTunnel release used to create the savepoint"
+#         required: false
+#         default: "3.0.0"
+#       scenario:
+#         description: "Restore scenario under tools/upgrade_compatibility/scenarios"
+#         required: false
+#         default: "all"
+#   schedule:
+#     - cron: "0 18 * * *"
+# 
 concurrency:
   group: upgrade-compatibility-${{ github.ref }}
   cancel-in-progress: false

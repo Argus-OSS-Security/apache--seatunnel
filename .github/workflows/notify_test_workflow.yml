@@ -27,11 +27,12 @@ name: On pull request update
 # pull request, which replaces `pull_request_target`. Everything it needs (head
 # SHA, head repository and branch) comes from the workflow_run payload; no pull
 # request code is checked out or run.
-on:
-  workflow_run:
-    workflows: ["PR signal"]
-    types: [completed]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_run:
+#     workflows: ["PR signal"]
+#     types: [completed]
+# 
 permissions: {}
 
 # `action_required` is a signal run of a first-time contributor that waits for workflow

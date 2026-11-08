@@ -19,10 +19,11 @@
 
 name: Merge Queue
 
-on:
-  merge_group:
-    types: [checks_requested]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   merge_group:
+#     types: [checks_requested]
+# 
 permissions:
   contents: read
 

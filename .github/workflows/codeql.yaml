@@ -15,10 +15,11 @@
 
 name: "CodeQL"
 
-on:
-  schedule:
-    - cron: '0 0 12 * *'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   schedule:
+#     - cron: '0 0 12 * *'
+# 
 jobs:
   analyze:
     name: Analyze

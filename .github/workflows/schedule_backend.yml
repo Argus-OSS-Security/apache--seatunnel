@@ -16,10 +16,11 @@
 #
 
 name: Schedule Backend
-on:
-  schedule:
-    - cron: '0 16 * * *'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   schedule:
+#     - cron: '0 16 * * *'
+# 
 concurrency:
   group: schedule-backend-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: false
